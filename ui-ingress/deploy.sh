@@ -37,5 +37,5 @@ echo "To view the online boutique portal, open the below URL in a new browser ta
 echo "----------------------------------------------------------------------------"
 echo "https://${UI_INGRESSGATEWAY_IP}.nip.io"
 echo " "
-echo "NOTE: This could take a few minutes as the managed certificates need to be provisioned"
+echo "NOTE: This could take a few minutes as the managed certificates needs to be provisioned"
 echo " "
