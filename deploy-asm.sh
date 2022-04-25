@@ -33,7 +33,7 @@ echo "No CLUSTERNAME variable set"
 exit
 fi
 
-
+gcloud services enable cloudtrace.googleapis.com
 
 gcloud container clusters get-credentials $CLUSTERNAME --project=$PROJECT --zone=$LOCATION
 kubectl config set-context $CLUSTERNAME
