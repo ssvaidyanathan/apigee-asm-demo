@@ -50,21 +50,31 @@ You can test connectivity now by visiting the Boutique shop UI in your browser.
 First, let's get the IP address of the frontend ingress.
 
 ```sh
-FRONTEND_IP=$(kubectl get service istio-ingressgateway  -n $FRONTEND_GATEWAY_NAMESPACE -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-echo "FRONTEND_IP=${FRONTEND_IP}"
+UI_IP=$(kubectl get ingress ui-ingressgateway -n $UI_GATEWAY_NAMESPACE -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+
+echo "UI_IP=${UI_IP}"
 ```
 
-Use the IP address form the previous command, and open the below URL in a nee browser tab
+
+Use the IP address form the previous command, and open the below URL in a new browser tab.
 
 ```
-https://${FRONTEND_IP}
+https://${UI_IP}
 ```
+
+**Note**: It may take up to 10 minutes for the GCP Load balancer to be ready. If you don't see the Boutique Shop UI, wait and try again later.
 
 --- 
 
 ## Deploy private API ingress
 
-Next, let's deploy another ASM ingress that will be used by Apigee. This ingress has two main tasks. First, it translates incoming REST calls into proper gRPC calls that the mesh services understand. Second, it knows how to route to the underlying gRPC services. The ingress is deployed as an Internal Load Balancer which will be used as a Target server for all the Apigee proxies configured in the subsequent step.
+Next, let's deploy another ASM ingress that will be used by Apigee. This ingress has two main tasks. 
+
+  * First, it translates incoming REST calls into proper gRPC calls that the mesh services understand. 
+
+  * Second, it knows how to route to the underlying gRPC services. 
+
+The ingress is deployed as an Internal Load Balancer which will be used as a Target server for all the Apigee proxies configured in the subsequent step.
 
 ```sh
 ./deploy-gateway.sh
