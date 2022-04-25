@@ -59,7 +59,7 @@ echo "UI_IP=${UI_IP}"
 Use the IP address form the previous command, and open the below URL in a new browser tab.
 
 ```
-https://${UI_IP}
+https://${UI_IP}.nip.io
 ```
 
 **Note**: It may take up to 10 minutes for the GCP Load balancer to be ready. If you don't see the Boutique Shop UI, wait and try again later.

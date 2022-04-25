@@ -69,6 +69,5 @@ kubectl apply -f asmoutput/samples/online-boutique/kubernetes-manifests/deployme
 kubectl apply -f asmoutput/samples/online-boutique/kubernetes-manifests/services
 kubectl apply -f asmoutput/samples/online-boutique/istio-manifests/allow-egress-googleapis.yaml
 
-
-./ui-ingress/deploy.sh
 ./orderservice/deploy.sh
+./ui-ingress/deploy.sh

@@ -32,3 +32,9 @@ export UI_INGRESSGATEWAY_IP=$(gcloud compute addresses describe ui-ingressgatewa
 sed -i -e "s/{ui-ingressgateway-ip}/${UI_INGRESSGATEWAY_IP}/g" kubernetes-manifests/deployment.yaml
 kubectl apply -n "${UI_GATEWAY_NAMESPACE}" -f kubernetes-manifests/deployment.yaml
 
+echo "To view the online boutique portal, open the below URL in a new browser tab"
+echo "----------------------------------------------------------------------------"
+echo "https://${UI_INGRESSGATEWAY_IP}.nip.io"
+echo " "
+echo "NOTE: This could take a few minutes as the managed certificates need to be provisioned"
+echo " "
