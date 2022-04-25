@@ -45,7 +45,10 @@ Next, let's install Anthos Service Mesh into the cluster, as well as the Boutiqu
 **Note**: This will take a few mins
 
 This script also creates an ASM ingress to expose the Boutique Shop UI externally. 
-You can test connectivity now by visiting the Boutique shop UI in your browser.
+
+### Test the online boutique portal 
+
+The script that deploys demo will also print the URL to open in a browser tab. If you do not see it in the console, you can follow the below instructions to get it again
 
 First, let's get the IP address of the frontend ingress.
 
@@ -54,7 +57,6 @@ UI_IP=$(kubectl get ingress ui-ingressgateway -n $UI_GATEWAY_NAMESPACE -o jsonpa
 
 echo "UI_IP=${UI_IP}"
 ```
-
 
 Use the IP address form the previous command, and open the below URL in a new browser tab.
 
