@@ -24,7 +24,6 @@ echo "No PROJECT variable set"
 exit
 fi
 
-
 array=(
   'cart/cartservice'
   'checkout/checkoutservice'

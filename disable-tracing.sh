@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-echo "Enabling Tracing on Boutique Services ..."
+echo "Disabling Tracing on Boutique Services ..."
 
 set -e
 
