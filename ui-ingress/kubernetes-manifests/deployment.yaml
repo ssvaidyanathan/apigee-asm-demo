@@ -95,6 +95,7 @@ kind: Ingress
 metadata:
   name: ui-ingressgateway
   annotations:
+    kubernetes.io/ingress.allow-http: "false"
     kubernetes.io/ingress.global-static-ip-name: ui-ingressgateway-ip
     networking.gke.io/managed-certificates: ui-ingressgateway
 spec:
